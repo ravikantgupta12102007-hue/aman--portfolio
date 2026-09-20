@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aman Kumar Gupta | CSE Student & Aspiring Data Scientist</title>
+
+    <meta name="description"
+          content="Personal portfolio of Aman Kumar Gupta, a B.Tech Computer Science student interested in Data Science, Artificial Intelligence and Machine Learning.">
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #070b14;
+            --bg-light: #0d1322;
+            --card: rgba(17, 25, 40, 0.75);
+            --border: rgba(255,255,255,0.09);
+
+            --text: #f5f7fb;
+            --muted: #9ca8bb;
+
+            --primary: #7c5cff;
+            --secondary: #00d4ff;
+            --green: #36e2a1;
+
+            --max-width: 1150px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(124,92,255,0.15), transparent 30%),
+                radial-gradient(circle at 90% 20%, rgba(0,212,255,0.10), transparent 30%),
+                var(--bg);
+
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(90%, var(--max-width));
+            margin: auto;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7,11,20,0.75);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            width: min(92%, var(--max-width));
+            height: 75px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 14px;
+            margin-bottom: 20px;
+
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 50px;
+
+            background: rgba(0,212,255,0.06);
+
+            color: var(--secondary);
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                var(--primary),
+                var(--secondary)
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero h2 {
+            color: var(--muted);
+            font-size: clamp(20px, 3vw, 28px);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                #5d8cff
+            );
+
+            box-shadow: 0 10px 30px rgba(124,92,255,0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            color: var(--text);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+
+        /* =========================
+           CODE CARD
+        ========================== */
+
+        .code-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.35);
+
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .window-top {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 25px;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #777;
+        }
+
+        .code {
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            color: #cdd6f4;
+            line-height: 2;
+        }
+
+        .purple {
+            color: #cba6f7;
+        }
+
+        .blue {
+            color: #89dceb;
+        }
+
+        .green {
+            color: #a6e3a1;
+        }
+
+        .yellow {
+            color: #f9e2af;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            padding: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .info-card strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info-card span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--card);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(124,92,255,0.5);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background: rgba(124,92,255,0.12);
+
+            font-size: 22px;
+
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            padding: 6px 10px;
+            border-radius: 6px;
+
+            background: rgba(255,255,255,0.05);
+
+            color: #c9d2e3;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            position: relative;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(124,92,255,0.08),
+                    rgba(255,255,255,0.02)
+                );
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-number {
+            color: var(--secondary);
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           JOURNEY
+        ========================== */
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 15px;
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: linear-gradient(
+                var(--primary),
+                var(--secondary)
+            );
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 55px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 7px;
+            top: 5px;
+
+            width: 18px;
+            height: 18px;
+
+            border-radius: 50%;
+
+            background: var(--secondary);
+
+            box-shadow:
+                0 0 20px rgba(0,212,255,0.5);
+        }
+
+        .timeline-item span {
+            color: var(--secondary);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .timeline-item h3 {
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           CAREER GOAL
+        ========================== */
+
+        .goal {
+            text-align: center;
+        }
+
+        .goal-box {
+            max-width: 850px;
+            margin: auto;
+
+            padding: 50px 30px;
+
+            border-radius: 25px;
+
+            border: 1px solid var(--border);
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(124,92,255,0.14),
+                    transparent 60%
+                );
+        }
+
+        .goal-box h3 {
+            font-size: clamp(28px, 5vw, 45px);
+            margin-bottom: 20px;
+        }
+
+        .goal-box p {
+            color: var(--muted);
+            max-width: 700px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 12px 20px;
+            border-radius: 10px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.03);
+
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--secondary);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                background: var(--bg-light);
+
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            Aman<span>.</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+
+            <li><a href="#projects">Projects</a></li>
+
+            <li><a href="#journey">Journey</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <span class="badge">
+                B.Tech CSE • 3rd Year • India
+            </span>
+
+            <h1>
+                Hi, I'm
+                <span class="gradient-text">
+                    Aman.
+                </span>
+            </h1>
+
+            <h2>
+                Aspiring Data Scientist & AI/ML Enthusiast
+            </h2>
+
+            <p class="hero-description">
+
+                I'm a Computer Science engineering student exploring
+                Data Science, Machine Learning and Artificial Intelligence.
+                I enjoy turning programming concepts and data into
+                practical projects while continuously improving my skills.
+
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects"
+                   class="btn btn-primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline">
+                    Let's Connect
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CODE WINDOW -->
+
+        <div class="code-card">
+
+            <div class="window-top">
+
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+
+            </div>
+
+            <div class="code">
+
+                <div>
+                    <span class="purple">class</span>
+                    <span class="blue">Aman</span>:
+                </div>
+
+                <div>&nbsp;</div>
+
+                <div>
+                    name =
+                    <span class="green">
+                        "Aman Kumar Gupta"
+                    </span>
+                </div>
+
+                <div>
+                    role =
+                    <span class="green">
+                        "CSE Student"
+                    </span>
+                </div>
+
+                <div>
+                    focus =
+                    <span class="green">
+                        "Data Science + AI"
+                    </span>
+                </div>
+
+                <div>
+                    learning =
+                    <span class="green">
+                        ["Python", "ML", "DS"]
+                    </span>
+                </div>
+
+                <div>
+                    mindset =
+                    <span class="yellow">
+                        "Keep Learning"
+                    </span>
+                </div>
+
+                <div>&nbsp;</div>
+
+                <div>
+                    <span class="purple">while</span>
+                    True:
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;&nbsp;
+                    learn()
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;&nbsp;
+                    build()
+                </div>
+
+                <div>
+                    &nbsp;&nbsp;&nbsp;
+                    improve()
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>About Me</span>
+
+            <h2>Who I Am</h2>
+
+            <p>
+                A student building a strong foundation in computer science
+                while moving toward Data Science and AI.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h3>
+                    Learning. Building. Improving.
+                </h3>
+
+                <p>
+                    I'm currently pursuing B.Tech in Computer Science
+                    Engineering. My journey started with programming
+                    fundamentals and gradually expanded toward
+                    object-oriented programming, Python, machine learning
+                    and data analytics.
+                </p>
+
+                <p>
+                    I like learning concepts by actually implementing them.
+                    From basic C programs and Java OOP assignments to
+                    machine-learning projects, my goal is to turn
+                    theoretical knowledge into practical skills.
+                </p>
+
+                <p>
+                    Right now, I'm focusing on strengthening Python,
+                    mathematics, statistics, data analysis and machine
+                    learning — the foundations I need for a career in
+                    Data Science and AI.
+                </p>
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <strong>🎓 Education</strong>
+
+                    <span>
+                        B.Tech Computer Science Engineering
+                    </span>
+
+                </div>
+
+                <div class="info-card">
+
+                    <strong>💻 Programming</strong>
+
+                    <span>
+                        C • Java • Python
+                    </span>
+
+                </div>
+
+                <div class="info-card">
+
+                    <strong>🤖 Interests</strong>
+
+                    <span>
+                        AI • ML • Data Science
+                    </span>
+
+                </div>
+
+                <div class="info-card">
+
+                    <strong>📊 Current Focus</strong>
+
+                    <span>
+                        Python • Statistics • ML
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>My Toolkit</span>
+
+            <h2>Skills & Technologies</h2>
+
+            <p>
+                Technologies and concepts I'm learning and working with.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <!-- Programming -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+                    Building programming fundamentals and solving
+                    problems using different languages.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">C</span>
+
+                    <span class="tag">Java</span>
+
+                    <span class="tag">Python</span>
+
+                    <span class="tag">OOP</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Data -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Data Science
+                </h3>
+
+                <p>
+                    Developing knowledge of data analysis, statistics
+                    and the foundations of data science.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Data Analysis</span>
+
+                    <span class="tag">Statistics</span>
+
+                    <span class="tag">NumPy</span>
+
+                    <span class="tag">Pandas</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ML -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI & Machine Learning
+                </h3>
+
+                <p>
+                    Learning machine-learning concepts and applying
+                    them to practical problems.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">ML</span>
+
+                    <span class="tag">Regression</span>
+
+                    <span class="tag">Classification</span>
+
+                    <span class="tag">Model Building</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Web -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Creating simple web interfaces and deploying
+                    projects for practical use.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">HTML</span>
+
+                    <span class="tag">CSS</span>
+
+                    <span class="tag">JavaScript</span>
+
+                    <span class="tag">Streamlit</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CS -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    CS Fundamentals
+                </h3>
+
+                <p>
+                    Strengthening core computer science concepts
+                    through coursework and practice.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Algorithms</span>
+
+                    <span class="tag">DSA</span>
+
+                    <span class="tag">OOP</span>
+
+                    <span class="tag">Problem Solving</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Learning -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Currently Learning
+                </h3>
+
+                <p>
+                    Continuously expanding my technical foundation
+                    toward a Data Science career.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+
+                    <span class="tag">Statistics</span>
+
+                    <span class="tag">Machine Learning</span>
+
+                    <span class="tag">Data Analytics</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>What I've Built</span>
+
+            <h2>Projects</h2>
+
+            <p>
+                A growing collection of projects built while learning
+                programming, data science and machine learning.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Machine Learning Project
+                </h3>
+
+                <p>
+                    A deployed machine-learning project created while
+                    exploring practical ML workflows, model development
+                    and interactive applications.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Machine Learning
+                    </span>
+
+                    <span class="tag">
+                        Streamlit
+                    </span>
+
+                </div>
+
+                <br>
+
+                <div class="project-links">
+
+                    <a href="https://my-ml-project.streamlit.app"
+                       target="_blank">
+
+                        Live Demo ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Java OOP Food Ordering System
+                </h3>
+
+                <p>
+                    A Java-based assignment focused on object-oriented
+                    programming concepts including encapsulation,
+                    association, aggregation and service-based order
+                    management.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Java
+                    </span>
+
+                    <span class="tag">
+                        OOP
+                    </span>
+
+                    <span class="tag">
+                        Collections
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Programming Practice
+                </h3>
+
+                <p>
+                    A collection of programming exercises covering
+                    arrays, matrices, functions, loops, algorithms,
+                    file handling and fundamental problem solving.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        C
+                    </span>
+
+                    <span class="tag">
+                        Algorithms
+                    </span>
+
+                    <span class="tag">
+                        Problem Solving
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 04
+                </div>
+
+                <h3>
+                    AI & Data Science Learning Projects
+                </h3>
+
+                <p>
+                    An evolving set of experiments and mini-projects
+                    created while learning Python, data analysis,
+                    machine learning and artificial intelligence.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Data Science
+                    </span>
+
+                    <span class="tag">
+                        AI
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LEARNING JOURNEY
+========================== -->
+
+<section id="journey">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>My Progress</span>
+
+            <h2>Learning Journey</h2>
+
+            <p>
+                The path I'm currently following to become a stronger
+                computer science and data professional.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>Foundation</span>
+
+                <h3>
+                    Programming Fundamentals
+                </h3>
+
+                <p>
+                    Started building programming fundamentals with C,
+                    algorithms, arrays, functions and problem solving.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>Next Step</span>
+
+                <h3>
+                    Object-Oriented Programming
+                </h3>
+
+                <p>
+                    Worked with Java and learned concepts such as
+                    classes, objects, encapsulation, association and
+                    aggregation.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>Current Focus</span>
+
+                <h3>
+                    Python & Data Science
+                </h3>
+
+                <p>
+                    Building Python skills and strengthening mathematics,
+                    statistics and data analytics knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>Growing</span>
+
+                <h3>
+                    Machine Learning & AI
+                </h3>
+
+                <p>
+                    Learning supervised and unsupervised learning,
+                    regression, classification and practical ML workflows.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <span>Future Goal</span>
+
+                <h3>
+                    Data Scientist / AI-ML Engineer
+                </h3>
+
+                <p>
+                    Build real-world projects, gain industry experience
+                    and develop strong expertise in data-driven
+                    intelligent systems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CAREER GOAL
+========================== -->
+
+<section class="goal">
+
+    <div class="container">
+
+        <div class="goal-box">
+
+            <h3>
+                Building Toward a Career in
+                <span class="gradient-text">
+                    Data Science & AI
+                </span>
+            </h3>
+
+            <p>
+
+                My long-term goal is to become a skilled data professional
+                who can understand data, build machine-learning solutions
+                and use artificial intelligence to solve meaningful
+                real-world problems.
+
+                I'm currently focused on strengthening my fundamentals
+                before moving toward more advanced AI and ML systems.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-title">
+
+                <span>Get In Touch</span>
+
+                <h2>Let's Connect</h2>
+
+                <p>
+
+                    I'm always interested in learning, building projects
+                    and connecting with people working in technology,
+                    data and AI.
+
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a href="mailto:your-email@example.com"
+                   class="contact-link">
+
+                    📧 Email
+
+                </a>
+
+
+                <a href="https://github.com/"
+                   target="_blank"
+                   class="contact-link">
+
+                    GitHub ↗
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank"
+                   class="contact-link">
+
+                    LinkedIn ↗
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Aman Kumar Gupta.
+        Built with <span>HTML</span> & curiosity.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    function toggleMenu() {
+
+        const nav =
+            document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    // Close mobile menu after clicking a link
+
+    document.querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+    // Simple scroll reveal animation
+
+    const cards =
+        document.querySelectorAll(
+            ".skill-card, .project-card, .timeline-item"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    cards.forEach(card => {
+
+        card.style.opacity = "0";
+
+        card.style.transform =
+            "translateY(25px)";
+
+        card.style.transition =
+            "all 0.7s ease";
+
+        observer.observe(card);
+
+    });
+
+</script>
+
+
+</body>
+</html>
